@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  --image-size: 68px;
+  width: var(--image-size);
+  height: var(--image-size);
+  object-fit: cover;
+  object-position: center;
+}
+
+.statusPoint {
+  --point-size: 10px;
+  width: var(--point-size);
+  height: var(--point-size);
+  background-color: var(--main-light-green);
+  border-radius: 50%;
+  position: absolute;
+  right: -4px;
+  bottom: 16px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.name,
+.company {
+  color: var(--main-white);
+  font-weight: 500;
+  opacity: 80%;
+}
+
+.name {
+  font-size: var(--font-size-xl);
+}
+
+.company {
+  font-size: var(--font-size-base);
+}
