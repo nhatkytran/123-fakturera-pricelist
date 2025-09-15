@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import Content from './components/Content';
 import styles from './Layout.module.css';
 
 /**
@@ -10,7 +11,7 @@ export default function Layout({ children }) {
   return (
     <main className={styles.main}>
       <Header />
-      {children}
+      <Content>{children}</Content>
     </main>
   );
 }
