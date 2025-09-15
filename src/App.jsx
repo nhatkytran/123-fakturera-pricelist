@@ -1,3 +1,4 @@
+/** App component. */
 function App() {
   return (
     <div>
