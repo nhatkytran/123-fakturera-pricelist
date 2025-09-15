@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import Content from './components/Content';
+import Sidebar from './components/Sidebar';
 import styles from './Layout.module.css';
 
 /**
@@ -11,7 +11,12 @@ export default function Layout({ children }) {
   return (
     <main className={styles.main}>
       <Header />
-      <Content>{children}</Content>
+      <div className={styles.boxContainer}>
+        <div className={styles.box}>
+          <Sidebar />
+          <div className={styles.content}>{children}</div>
+        </div>
+      </div>
     </main>
   );
 }
