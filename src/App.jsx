@@ -1,10 +1,6 @@
-/** App component. */
-function App() {
-  return (
-    <div>
-      <h1>App</h1>
-    </div>
-  );
-}
+import Layout from './features/layout';
 
-export default App;
+/** App component. */
+export default function App() {
+  return <Layout></Layout>;
+}
