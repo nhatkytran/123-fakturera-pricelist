@@ -38,13 +38,15 @@
 .company {
   color: var(--main-white);
   font-weight: 500;
-  opacity: 80%;
+  letter-spacing: 0.4px;
 }
 
 .name {
   font-size: var(--font-size-xl);
+  opacity: 90%;
 }
 
 .company {
   font-size: var(--font-size-base);
+  opacity: 80%;
 }

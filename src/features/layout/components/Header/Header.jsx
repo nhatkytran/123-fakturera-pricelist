@@ -1,4 +1,5 @@
 import UserDisplay from './components/UserDisplay';
+import Language from './components/Language';
 import styles from './Header.module.css';
 
 /** Header component. */
@@ -7,7 +8,7 @@ export default function Header() {
     <div className={styles.headerContainer}>
       <header className={styles.header}>
         <UserDisplay />
-        <div>Language</div>
+        <Language />
       </header>
     </div>
   );
