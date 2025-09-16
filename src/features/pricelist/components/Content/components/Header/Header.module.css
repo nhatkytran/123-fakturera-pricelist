@@ -15,3 +15,9 @@
     display: none;
   }
 }
+
+@media only screen and (max-width: 1124px) {
+  .headerCell[name='inPrice'] {
+    display: none;
+  }
+}

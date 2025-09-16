@@ -14,7 +14,7 @@ export default function Sidebar() {
         <ul className={styles.menu}>
           {MENU_ITEMS.map(({ text, Icon, iconColor, status }) => (
             <li className={clsx(styles.menuItem, status === 'active' && styles.active)}>
-              <Icon size={20} color={iconColor} />
+              <Icon className={styles.menuItemIcon} size={20} color={iconColor} />
               <p className={clsx(styles.menuItemText, status === 'inactive' && styles.inactive)}>{text}</p>
               <span className={styles.statusPoint} />
             </li>

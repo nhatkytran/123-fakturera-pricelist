@@ -16,7 +16,9 @@ export default function Header() {
         Product/Service
         <FaArrowDownLong color="#73e287" />
       </div>
-      <div className={styles.headerCell}>In Price</div>
+      <div name="inPrice" className={styles.headerCell}>
+        In Price
+      </div>
       <div className={styles.headerCell}>Price</div>
       <div className={styles.headerCell}>Unit</div>
       <div className={styles.headerCell}>In Stock</div>

@@ -10,6 +10,12 @@
   scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
 }
 
+@media only screen and (max-width: 1124px) {
+  .sidebar {
+    padding-right: var(--spacing-2xl);
+  }
+}
+
 .sidebar::-webkit-scrollbar {
   display: none; /* Older Safari and Chromium */
 }
@@ -44,6 +50,12 @@
   position: relative;
 }
 
+@media only screen and (max-width: 1124px) {
+  .menuItem {
+    gap: var(--spacing-lg);
+  }
+}
+
 .menuItem.active .statusPoint {
   display: block;
 }
@@ -54,8 +66,26 @@
   opacity: 80%;
 }
 
+@media only screen and (max-width: 1124px) {
+  .menuItemText {
+    font-size: var(--font-size-extra-md);
+  }
+}
+
 .menuItemText.inactive {
   opacity: 40%;
+}
+
+.menuItemIcon {
+  flex-shrink: 0;
+}
+
+@media only screen and (max-width: 1124px) {
+  .menuItemIcon {
+    --icon-size: 18px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
 }
 
 .statusPoint {
@@ -69,4 +99,10 @@
   left: -20px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 1124px) {
+  .statusPoint {
+    --point-size: 10px;
+  }
 }
