@@ -11,7 +11,7 @@
 
 @media only screen and (max-width: 1500px) {
   .gridTemplate {
-    grid-template-columns: 0.12fr 0.25fr 0.08fr 0.088fr 0.12fr 0.07fr 0.25fr 0.02fr;
+    grid-template-columns: 0.12fr 0.25fr 0.08fr 0.088fr 0.12fr 0.072fr 0.25fr 0.02fr;
   }
 }
 

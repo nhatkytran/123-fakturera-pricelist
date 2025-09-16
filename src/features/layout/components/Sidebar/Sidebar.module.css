@@ -2,6 +2,7 @@
   flex: 0.15;
   padding-block: var(--spacing-2xl);
   padding-right: var(--spacing-3xl);
+  padding-left: var(--spacing-7xl);
   box-shadow: 4px 0 8px -2px rgba(0, 0, 0, 0.1);
   height: calc(100vh - 100px);
   overflow-y: scroll;
