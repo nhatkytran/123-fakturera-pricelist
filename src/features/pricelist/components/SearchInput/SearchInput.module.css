@@ -1,0 +1,25 @@
+.searchBox {
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  color: var(--main-dark-gray);
+  padding: 4px 10px;
+  border: 1px solid var(--main-gray);
+  border-radius: 20px;
+}
+
+.searchInput::placeholder {
+  color: var(--main-gray);
+}
+
+.searchIcon {
+  color: var(--main-cyan);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

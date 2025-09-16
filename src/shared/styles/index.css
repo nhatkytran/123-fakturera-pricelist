@@ -26,8 +26,11 @@
   --main-black: #000000;
   --main-dark-blue: #0f7ee9;
   --main-light-blue: #4dadf2;
+  --main-cyan: #86eaea;
   --main-dark-green: #03d029;
   --main-light-green: #2bce49;
+  --main-gray: #d8d8d8;
+  --main-dark-gray: #878787;
 }
 
 *,

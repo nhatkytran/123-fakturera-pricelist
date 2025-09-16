@@ -16,7 +16,7 @@ export const MENU_ITEMS = [
   { text: 'Multiple Invoicing', status: 'normal', Icon: IoDocumentTextSharp, iconColor: '#44e4f0' },
   { text: 'Unpaid Invoices', status: 'normal', Icon: IoMdCloseCircle, iconColor: '#F24B8F' },
   { text: 'Offer', status: 'normal', Icon: RiDiscountPercentLine, iconColor: '#f6b40d' },
-  { text: 'Inventory Control', status: 'inactive', Icon: MdInventory2, iconColor: '#67c3e2' },
+  { text: 'Inventory Control', status: 'inactive', Icon: MdInventory2, iconColor: '#48BEDE' },
   { text: 'Member Invoicing', status: 'inactive', Icon: FaIdCard, iconColor: '#199CFD' },
   { text: 'Import/Export', status: 'normal', Icon: FaCloudArrowUp, iconColor: '#5b97e7' },
   { text: 'Log out', status: 'normal', Icon: MdLogout, iconColor: '#0bcf9a' },

@@ -23,4 +23,6 @@
 
 .content {
   flex: 0.85;
+  padding-block: var(--spacing-2xl);
+  padding-inline: calc(var(--spacing-7xl) * 2);
 }
