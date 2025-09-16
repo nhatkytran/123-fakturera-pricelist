@@ -68,12 +68,12 @@
 }
 
 @media only screen and (max-width: 672px) {
-  .tableCell[name='articleNo'] {
-    display: none;
+  .tableCell {
+    padding-inline: var(--spacing-2xl);
   }
 
-  .tableCell[name='productService'] {
-    padding-inline: var(--spacing-2xl);
+  .tableCell[name='articleNo'] {
+    display: none;
   }
 
   .tableCell[name='price'] {
@@ -86,6 +86,12 @@
 
   .tableCell[name='unitPlaceholder'] {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .tableCell {
+    padding-inline: var(--spacing-md);
   }
 }
 
