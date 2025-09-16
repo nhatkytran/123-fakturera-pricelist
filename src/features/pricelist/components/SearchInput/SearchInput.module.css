@@ -9,11 +9,11 @@
   color: var(--main-dark-gray);
   padding: 4px 10px;
   border: 1px solid var(--main-gray);
-  border-radius: 20px;
+  border-radius: var(--spacing-2xl);
 }
 
 .searchInput::placeholder {
-  color: var(--main-gray);
+  color: var(--main-dark-gray);
 }
 
 .searchIcon {
