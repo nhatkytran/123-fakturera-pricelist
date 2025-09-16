@@ -10,12 +10,16 @@ import styles from './Article.module.css';
  * @param {Object} props Props object.
  * @param {Object} props.article Article object.
  * @param {boolean} props.isActive Is active article.
+ * @param {Function} props.onArticleClick Article click handler.
  */
-export default function Article({ article, isActive }) {
+export default function Article({ article, isActive, onArticleClick }) {
   const { articleNo, productService, inPrice, price, unit, inStock, description } = article;
 
   return (
-    <div className={clsx(stylesContent.gridTemplate, styles.tableRow, isActive && styles.active)}>
+    <div
+      onClick={onArticleClick}
+      className={clsx(stylesContent.gridTemplate, styles.tableRow, isActive && styles.active)}
+    >
       <FaArrowRightLong size={18} color="#0f7ee9" className={styles.tableRowArrow} />
       <input className={styles.tableCell} type="number" name="articleNo" value={articleNo} />
       <input className={styles.tableCell} type="text" name="productService" value={productService} />

@@ -243,14 +243,27 @@ const PRICE_LIST = [
 
 /** Content component. */
 export default function Content() {
-  const [activeIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  /**
+   * Handle article click.
+   * @param {number} index The index of the article.
+   */
+  const handleArticleClick = index => () => {
+    setActiveIndex(index);
+  };
 
   return (
     <div className={styles.content}>
       <Header />
       <div className={styles.table}>
         {PRICE_LIST.map((article, index) => (
-          <Article key={article.articleNo} article={article} isActive={index === activeIndex} />
+          <Article
+            key={article.articleNo}
+            article={article}
+            isActive={index === activeIndex}
+            onArticleClick={handleArticleClick(index)}
+          />
         ))}
       </div>
     </div>
