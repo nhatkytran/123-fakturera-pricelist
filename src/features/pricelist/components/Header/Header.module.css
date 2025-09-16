@@ -22,3 +22,9 @@
     gap: var(--spacing-xl);
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .actionsContainer {
+    gap: var(--spacing-lg);
+  }
+}

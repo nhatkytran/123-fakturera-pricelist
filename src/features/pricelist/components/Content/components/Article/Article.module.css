@@ -10,15 +10,9 @@
 .tableRowArrow {
   display: none;
   position: absolute;
-  left: -16px;
+  left: -12px;
   top: 50%;
   transform: translateY(-50%) translateX(-100%);
-}
-
-@media only screen and (max-width: 1300px) {
-  .tableRowArrow {
-    left: -12px;
-  }
 }
 
 @media only screen and (max-width: 1024px) {
