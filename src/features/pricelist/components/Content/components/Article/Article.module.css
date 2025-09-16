@@ -3,7 +3,12 @@
   position: relative;
 }
 
+.tableRow.active .tableRowArrow {
+  display: block;
+}
+
 .tableRowArrow {
+  display: none;
   position: absolute;
   left: -16px;
   top: 50%;
@@ -14,6 +19,7 @@
   width: 100%;
   padding: var(--spacing-sm) calc(var(--spacing-xs) * 3);
   font-size: var(--font-size-md);
+  font-weight: 500;
   border: 1px solid var(--main-extra-light-blue);
   border-radius: calc(var(--spacing-lg) - 2px);
 }
@@ -22,5 +28,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--main-dark-blue);
   cursor: pointer;
 }

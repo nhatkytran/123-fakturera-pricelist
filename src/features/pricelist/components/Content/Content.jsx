@@ -1,14 +1,257 @@
+import { useState } from 'react';
+
 import Header from './components/Header';
 import Article from './components/Article';
 import styles from './Content.module.css';
 
+const PRICE_LIST = [
+  {
+    articleNo: 1234567890,
+    productService: 'This is a test product with fifty characters this!',
+    inPrice: 900500,
+    price: 1500800,
+    unit: 'kilometers/hour',
+    inStock: 2500600,
+    description: 'This is the description with fifty characters this',
+  },
+  {
+    articleNo: 1002044545,
+    productService: 'This is product number 1, a Watch with New arrival quality for testing purpose!',
+    inPrice: 806747,
+    price: 1738565,
+    unit: 'kg',
+    inStock: 4468,
+    description: 'Description of product 1: Watch which is New arrival, created only for demo dataset.',
+  },
+  {
+    articleNo: 1001372456,
+    productService: 'This is product number 2, a Watch with Discounted quality for testing purpose!',
+    inPrice: 891628,
+    price: 1426600,
+    unit: 'kg',
+    inStock: 802,
+    description: 'Description of product 2: Watch which is Discounted, created only for demo dataset.',
+  },
+  {
+    articleNo: 1008479685,
+    productService: 'This is product number 3, a Tablet with Best seller quality for testing purpose!',
+    inPrice: 593885,
+    price: 1278387,
+    unit: 'liters',
+    inStock: 1583,
+    description: 'Description of product 3: Tablet which is Best seller, created only for demo dataset.',
+  },
+  {
+    articleNo: 1006903709,
+    productService: 'This is product number 4, a Camera with High quality quality for testing purpose!',
+    inPrice: 740215,
+    price: 2828479,
+    unit: 'kg',
+    inStock: 1113,
+    description: 'Description of product 4: Camera which is High quality, created only for demo dataset.',
+  },
+  {
+    articleNo: 1004863180,
+    productService: 'This is product number 5, a Tablet with Best seller quality for testing purpose!',
+    inPrice: 522040,
+    price: 2892003,
+    unit: 'liters',
+    inStock: 4560,
+    description: 'Description of product 5: Tablet which is Best seller, created only for demo dataset.',
+  },
+  {
+    articleNo: 1006499738,
+    productService: 'This is product number 6, a Phone with Discounted quality for testing purpose!',
+    inPrice: 903579,
+    price: 2713380,
+    unit: 'kg',
+    inStock: 3718,
+    description: 'Description of product 6: Phone which is Discounted, created only for demo dataset.',
+  },
+  {
+    articleNo: 1002697382,
+    productService: 'This is product number 7, a Laptop with New arrival quality for testing purpose!',
+    inPrice: 557520,
+    price: 1039583,
+    unit: 'packs',
+    inStock: 3273,
+    description: 'Description of product 7: Laptop which is New arrival, created only for demo dataset.',
+  },
+  {
+    articleNo: 1006438472,
+    productService: 'This is product number 8, a Watch with Limited edition quality for testing purpose!',
+    inPrice: 576801,
+    price: 1386742,
+    unit: 'pcs',
+    inStock: 3496,
+    description: 'Description of product 8: Watch which is Limited edition, created only for demo dataset.',
+  },
+  {
+    articleNo: 1008853153,
+    productService: 'This is product number 9, a Phone with Best seller quality for testing purpose!',
+    inPrice: 892214,
+    price: 1115716,
+    unit: 'packs',
+    inStock: 2331,
+    description: 'Description of product 9: Phone which is Best seller, created only for demo dataset.',
+  },
+  {
+    articleNo: 1006063551,
+    productService: 'This is product number 10, a Laptop with High quality quality for testing purpose!',
+    inPrice: 902457,
+    price: 2099993,
+    unit: 'boxes',
+    inStock: 2441,
+    description: 'Description of product 10: Laptop which is High quality, created only for demo dataset.',
+  },
+  {
+    articleNo: 1005018977,
+    productService: 'This is product number 11, a Laptop with High quality quality for testing purpose!',
+    inPrice: 972449,
+    price: 1809607,
+    unit: 'boxes',
+    inStock: 4684,
+    description: 'Description of product 11: Laptop which is High quality, created only for demo dataset.',
+  },
+  {
+    articleNo: 1005163559,
+    productService: 'This is product number 12, a Phone with Best seller quality for testing purpose!',
+    inPrice: 614305,
+    price: 1885477,
+    unit: 'pcs',
+    inStock: 4482,
+    description: 'Description of product 12: Phone which is Best seller, created only for demo dataset.',
+  },
+  {
+    articleNo: 1002852203,
+    productService: 'This is product number 13, a Watch with Limited edition quality for testing purpose!',
+    inPrice: 939323,
+    price: 1526440,
+    unit: 'packs',
+    inStock: 1117,
+    description: 'Description of product 13: Watch which is Limited edition, created only for demo dataset.',
+  },
+  {
+    articleNo: 1007308766,
+    productService: 'This is product number 14, a Camera with Discounted quality for testing purpose!',
+    inPrice: 685042,
+    price: 1833245,
+    unit: 'liters',
+    inStock: 2640,
+    description: 'Description of product 14: Camera which is Discounted, created only for demo dataset.',
+  },
+  {
+    articleNo: 1003605530,
+    productService: 'This is product number 15, a Camera with New arrival quality for testing purpose!',
+    inPrice: 630125,
+    price: 1014800,
+    unit: 'liters',
+    inStock: 926,
+    description: 'Description of product 15: Camera which is New arrival, created only for demo dataset.',
+  },
+  {
+    articleNo: 1000983436,
+    productService: 'This is product number 16, a Phone with Discounted quality for testing purpose!',
+    inPrice: 745608,
+    price: 2384274,
+    unit: 'pcs',
+    inStock: 1432,
+    description: 'Description of product 16: Phone which is Discounted, created only for demo dataset.',
+  },
+  {
+    articleNo: 1007459810,
+    productService: 'This is product number 17, a Watch with New arrival quality for testing purpose!',
+    inPrice: 771585,
+    price: 2337707,
+    unit: 'boxes',
+    inStock: 2661,
+    description: 'Description of product 17: Watch which is New arrival, created only for demo dataset.',
+  },
+  {
+    articleNo: 1000696437,
+    productService: 'This is product number 18, a Phone with New arrival quality for testing purpose!',
+    inPrice: 546451,
+    price: 2151088,
+    unit: 'pcs',
+    inStock: 3504,
+    description: 'Description of product 18: Phone which is New arrival, created only for demo dataset.',
+  },
+  {
+    articleNo: 1008353953,
+    productService: 'This is product number 19, a Camera with Limited edition quality for testing purpose!',
+    inPrice: 981798,
+    price: 2666156,
+    unit: 'boxes',
+    inStock: 4076,
+    description: 'Description of product 19: Camera which is Limited edition, created only for demo dataset.',
+  },
+  {
+    articleNo: 1004105034,
+    productService: 'This is product number 20, a Laptop with Best seller quality for testing purpose!',
+    inPrice: 899928,
+    price: 1554787,
+    unit: 'kg',
+    inStock: 3263,
+    description: 'Description of product 20: Laptop which is Best seller, created only for demo dataset.',
+  },
+  {
+    articleNo: 1006487280,
+    productService: 'This is product number 21, a Phone with Limited edition quality for testing purpose!',
+    inPrice: 586624,
+    price: 1251973,
+    unit: 'pcs',
+    inStock: 3716,
+    description: 'Description of product 21: Phone which is Limited edition, created only for demo dataset.',
+  },
+  {
+    articleNo: 1004720831,
+    productService: 'This is product number 22, a Tablet with High quality quality for testing purpose!',
+    inPrice: 899581,
+    price: 2238578,
+    unit: 'pcs',
+    inStock: 4806,
+    description: 'Description of product 22: Tablet which is High quality, created only for demo dataset.',
+  },
+  {
+    articleNo: 1003280849,
+    productService: 'This is product number 23, a Phone with High quality quality for testing purpose!',
+    inPrice: 700999,
+    price: 1739024,
+    unit: 'packs',
+    inStock: 1183,
+    description: 'Description of product 23: Phone which is High quality, created only for demo dataset.',
+  },
+  {
+    articleNo: 1002975647,
+    productService: 'This is product number 24, a Laptop with High quality quality for testing purpose!',
+    inPrice: 557638,
+    price: 1437800,
+    unit: 'pcs',
+    inStock: 1668,
+    description: 'Description of product 24: Laptop which is High quality, created only for demo dataset.',
+  },
+  {
+    articleNo: 1002424326,
+    productService: 'This is product number 25, a Tablet with Best seller quality for testing purpose!',
+    inPrice: 717099,
+    price: 1477045,
+    unit: 'boxes',
+    inStock: 3455,
+    description: 'Description of product 25: Tablet which is Best seller, created only for demo dataset.',
+  },
+];
+
 /** Content component. */
 export default function Content() {
+  const [activeIndex] = useState(0);
+
   return (
     <div className={styles.content}>
       <Header />
       <div className={styles.table}>
-        <Article />
+        {PRICE_LIST.map((article, index) => (
+          <Article key={article.articleNo} article={article} isActive={index === activeIndex} />
+        ))}
       </div>
     </div>
   );

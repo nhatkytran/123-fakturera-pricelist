@@ -8,3 +8,9 @@
   display: grid;
   grid-template-columns: 0.09fr 0.29fr 0.06fr 0.068fr 0.11fr 0.068fr 0.294fr 0.02fr;
 }
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
