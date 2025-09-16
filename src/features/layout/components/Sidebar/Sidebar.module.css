@@ -3,6 +3,14 @@
   padding-block: var(--spacing-2xl);
   padding-right: var(--spacing-3xl);
   box-shadow: 4px 0 8px -2px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Older Safari and Chromium */
 }
 
 .container {
