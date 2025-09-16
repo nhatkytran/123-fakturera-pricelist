@@ -1,0 +1,13 @@
+.header {
+  display: grid;
+  grid-template-columns: 0.11fr 0.26fr 0.07fr 0.08fr 0.11fr 0.08fr 0.27fr 0.02fr;
+  gap: var(--spacing-md);
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-extra-md);
+  font-weight: 500;
+}
