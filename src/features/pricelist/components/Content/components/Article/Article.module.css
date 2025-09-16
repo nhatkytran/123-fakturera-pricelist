@@ -1,0 +1,26 @@
+.tableRow {
+  gap: calc(var(--spacing-lg) - 2px);
+  position: relative;
+}
+
+.tableRowArrow {
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%);
+}
+
+.tableCell {
+  width: 100%;
+  padding: var(--spacing-sm) calc(var(--spacing-xs) * 3);
+  font-size: var(--font-size-md);
+  border: 1px solid var(--main-extra-light-blue);
+  border-radius: calc(var(--spacing-lg) - 2px);
+}
+
+.tableCellIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
