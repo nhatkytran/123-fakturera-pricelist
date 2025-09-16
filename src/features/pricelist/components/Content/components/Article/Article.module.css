@@ -21,6 +21,12 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .tableRowArrow {
+    left: -10px;
+  }
+}
+
 .tableCell {
   width: 100%;
   padding: var(--spacing-sm) calc(var(--spacing-xs) * 3);

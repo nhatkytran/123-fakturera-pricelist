@@ -40,3 +40,10 @@
     padding-right: var(--spacing-7xl);
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .content {
+    flex: 1;
+    padding-left: var(--spacing-7xl);
+  }
+}
