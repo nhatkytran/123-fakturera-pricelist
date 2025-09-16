@@ -1,0 +1,13 @@
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: calc(var(--spacing-lg) / 2) var(--spacing-lg);
+  border-radius: var(--spacing-lg);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.actionButtonText {
+  color: var(--main-dark-gray);
+  font-weight: 500;
+}
