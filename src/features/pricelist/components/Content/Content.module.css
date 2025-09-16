@@ -4,19 +4,9 @@
   gap: var(--spacing-xl);
 }
 
-.header,
-.tableRow {
+.gridTemplate {
   display: grid;
   grid-template-columns: 0.09fr 0.29fr 0.06fr 0.068fr 0.11fr 0.068fr 0.294fr 0.02fr;
-  gap: var(--spacing-md);
-}
-
-.headerCell {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  font-size: var(--font-size-extra-md);
-  font-weight: 500;
 }
 
 .tableRow {

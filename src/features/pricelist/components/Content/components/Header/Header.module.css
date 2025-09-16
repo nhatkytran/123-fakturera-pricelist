@@ -1,0 +1,11 @@
+.header {
+  gap: var(--spacing-md);
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-extra-md);
+  font-weight: 500;
+}
