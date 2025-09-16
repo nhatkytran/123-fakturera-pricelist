@@ -1,6 +1,7 @@
-.header {
+.header,
+.tableRow {
   display: grid;
-  grid-template-columns: 0.11fr 0.26fr 0.07fr 0.08fr 0.11fr 0.08fr 0.27fr 0.02fr;
+  grid-template-columns: 0.095fr 0.305fr 0.06fr 0.07fr 0.112fr 0.068fr 0.27fr 0.02fr;
   gap: var(--spacing-md);
 }
 
@@ -10,4 +11,16 @@
   gap: var(--spacing-xs);
   font-size: var(--font-size-extra-md);
   font-weight: 500;
+}
+
+.tableRow {
+  gap: calc(var(--spacing-lg) - 2px);
+}
+
+.tableCell {
+  width: 100%;
+  padding: var(--spacing-sm) calc(var(--spacing-xs) * 3);
+  font-size: var(--font-size-md);
+  border: 1px solid var(--main-gray);
+  border-radius: calc(var(--spacing-lg) - 2px);
 }

@@ -8,8 +8,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.searchContainer}>
-        <SearchInput placeholder="Search Article No..." />
-        <SearchInput placeholder="Search Product ..." />
+        <SearchInput name="article" placeholder="Search Article No..." />
+        <SearchInput name="product" placeholder="Search Product ..." />
       </div>
       <div className={styles.actionsContainer}>
         {PRICE_LIST_ACTION_BUTTONS.map(({ title, Icon, color }, index) => (
