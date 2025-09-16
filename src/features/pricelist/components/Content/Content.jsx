@@ -1,11 +1,11 @@
-import { FaArrowDownLong } from 'react-icons/fa6';
+import { FaArrowDownLong, FaArrowRightLong } from 'react-icons/fa6';
 import { MdMoreHoriz } from 'react-icons/md';
 import styles from './Content.module.css';
 
 /** Content component. */
 export default function Content() {
   return (
-    <div>
+    <div className={styles.content}>
       <header className={styles.header}>
         <div className={styles.headerCell}>
           Article No.
@@ -24,6 +24,7 @@ export default function Content() {
       </header>
       <div className={styles.table}>
         <div className={styles.tableRow}>
+          <FaArrowRightLong size={18} color="#0f7ee9" className={styles.tableRowArrow} />
           <input className={styles.tableCell} type="number" name="article" value={1234567890} />
           <input
             className={styles.tableCell}
@@ -41,8 +42,8 @@ export default function Content() {
             name="description"
             value={'This is the description with fifty characters this'}
           />
-          <div>
-            <MdMoreHoriz />
+          <div className={styles.tableCellIcon}>
+            <MdMoreHoriz size={18} color="#0f7ee9" />
           </div>
         </div>
       </div>

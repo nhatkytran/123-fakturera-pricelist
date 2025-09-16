@@ -52,11 +52,11 @@
 .statusPoint {
   --point-size: 12px;
   display: none;
-  position: absolute;
   width: var(--point-size);
   height: var(--point-size);
   border-radius: 50%;
   background-color: var(--main-dark-green);
+  position: absolute;
   left: -20px;
   top: 50%;
   transform: translateY(-50%);
