@@ -21,3 +21,9 @@
   max-width: 1400px;
   padding-inline: var(--spacing-7xl);
 }
+
+@media only screen and (max-width: 480px) {
+  .header {
+    padding-inline: var(--spacing-5xl);
+  }
+}

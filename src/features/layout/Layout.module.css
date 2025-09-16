@@ -59,3 +59,9 @@
     padding-left: var(--spacing-7xl);
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .content {
+    padding-inline: var(--spacing-5xl);
+  }
+}

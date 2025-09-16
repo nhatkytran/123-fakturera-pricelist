@@ -9,3 +9,9 @@
     gap: var(--spacing-4xl);
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .pricelist {
+    gap: var(--spacing-2xl);
+  }
+}
