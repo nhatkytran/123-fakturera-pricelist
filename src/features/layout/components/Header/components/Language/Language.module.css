@@ -18,3 +18,17 @@
   object-position: center;
   border-radius: var(--spacing-sm);
 }
+
+@media screen and (max-width: 672px) {
+  .languageContainer {
+    gap: var(--spacing-lg);
+  }
+
+  .language {
+    font-size: var(--font-size-extra-md);
+  }
+
+  .languageIcon {
+    width: var(--spacing-5xl);
+  }
+}

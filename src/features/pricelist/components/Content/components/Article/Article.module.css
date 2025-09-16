@@ -61,6 +61,28 @@
   }
 }
 
+@media only screen and (max-width: 672px) {
+  .tableCell[name='articleNo'] {
+    display: none;
+  }
+
+  .tableCell[name='productService'] {
+    padding-inline: var(--spacing-2xl);
+  }
+
+  .tableCell[name='price'] {
+    text-align: center;
+  }
+
+  .tableCell[name='inStock'] {
+    display: none;
+  }
+
+  .tableCell[name='unitPlaceholder'] {
+    display: none;
+  }
+}
+
 .tableCellIcon {
   display: flex;
   align-items: center;

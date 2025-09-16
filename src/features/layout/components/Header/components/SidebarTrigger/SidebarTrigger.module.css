@@ -23,3 +23,10 @@
     height: var(--spacing-5xl);
   }
 }
+
+@media screen and (max-width: 672px) {
+  .menuIcon {
+    width: var(--spacing-4xl);
+    height: var(--spacing-4xl);
+  }
+}

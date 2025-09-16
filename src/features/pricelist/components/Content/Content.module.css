@@ -45,6 +45,12 @@
   }
 }
 
+@media only screen and (max-width: 672px) {
+  .gridTemplate {
+    grid-template-columns: 0.75fr 0.2fr 0.05fr;
+  }
+}
+
 .table {
   display: flex;
   flex-direction: column;

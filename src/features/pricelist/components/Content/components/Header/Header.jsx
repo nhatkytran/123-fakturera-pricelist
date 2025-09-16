@@ -8,22 +8,26 @@ import styles from './Header.module.css';
 export default function Header() {
   return (
     <header className={clsx(stylesContent.gridTemplate, styles.header)}>
-      <div className={styles.headerCell}>
+      <div name="articleNo" className={styles.headerCell}>
         Article No.
         <FaArrowDownLong color="#3be6e6" className={styles.headerCellArrow} />
       </div>
-      <div className={styles.headerCell}>
+      <div name="productService" className={styles.headerCell}>
         Product/Service
         <FaArrowDownLong color="#73e287" className={styles.headerCellArrow} />
       </div>
       <div name="inPrice" className={styles.headerCell}>
         In Price
       </div>
-      <div className={styles.headerCell}>Price</div>
+      <div name="price" className={styles.headerCell}>
+        Price
+      </div>
       <div name="unit" className={styles.headerCell}>
         Unit
       </div>
-      <div className={styles.headerCell}>In Stock</div>
+      <div name="inStock" className={styles.headerCell}>
+        In Stock
+      </div>
       <div name="unitPlaceholder" className={styles.headerCell}>
         Unit
       </div>

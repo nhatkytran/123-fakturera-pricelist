@@ -7,7 +7,7 @@
 .searchInput {
   width: 100%;
   color: var(--main-dark-gray);
-  padding: 4px 10px;
+  padding: var(--spacing-sm) calc(var(--spacing-md) + 2px);
   border: 1px solid var(--main-gray);
   border-radius: var(--spacing-lg);
 }
@@ -18,6 +18,16 @@
   }
 }
 
+@media only screen and (max-width: 672px) {
+  .searchBox {
+    max-width: 100%;
+  }
+
+  .searchInput {
+    padding-block: calc(var(--spacing-sm) + 2px);
+  }
+}
+
 .searchInput::placeholder {
   color: var(--main-dark-gray);
 }
@@ -25,7 +35,7 @@
 .searchIcon {
   color: var(--main-cyan);
   position: absolute;
-  right: 10px;
+  right: calc(var(--spacing-md) + 2px);
   top: 50%;
   transform: translateY(-50%);
 }
