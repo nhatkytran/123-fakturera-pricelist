@@ -1,16 +1,63 @@
 .sidebar {
   flex: 0.15;
   padding-block: var(--spacing-2xl);
-  padding-right: var(--spacing-2xl);
+  padding-right: var(--spacing-3xl);
+  box-shadow: 4px 0 8px -2px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4xl);
 }
 
 .header {
   padding-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--main-dark-blue);
+  border-bottom: 2px solid var(--main-light-blue);
 }
 
 .headerText {
   font-size: var(--font-size-2xl);
   font-weight: 500;
   text-align: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  position: relative;
+}
+
+.menuItem.active .statusPoint {
+  display: block;
+}
+
+.menuItemText {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  opacity: 80%;
+}
+
+.menuItemText.inactive {
+  opacity: 40%;
+}
+
+.statusPoint {
+  --point-size: 12px;
+  display: none;
+  position: absolute;
+  width: var(--point-size);
+  height: var(--point-size);
+  border-radius: 50%;
+  background-color: var(--main-dark-green);
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
 }

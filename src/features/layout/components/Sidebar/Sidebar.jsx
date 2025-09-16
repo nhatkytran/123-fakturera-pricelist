@@ -1,3 +1,6 @@
+import clsx from 'clsx';
+
+import { MENU_ITEMS } from '@/features/layout/components/data';
 import styles from './Sidebar.module.css';
 
 /** Sidebar component. */
@@ -8,7 +11,15 @@ export default function Sidebar() {
         <header className={styles.header}>
           <div className={styles.headerText}>Menu</div>
         </header>
-        <div>Invoices</div>
+        <ul className={styles.menu}>
+          {MENU_ITEMS.map(({ text, Icon, iconColor, status }) => (
+            <li className={clsx(styles.menuItem, status === 'active' && styles.active)}>
+              <Icon size={20} color={iconColor} />
+              <p className={clsx(styles.menuItemText, status === 'inactive' && styles.inactive)}>{text}</p>
+              <span className={styles.statusPoint} />
+            </li>
+          ))}
+        </ul>
       </div>
     </aside>
   );
