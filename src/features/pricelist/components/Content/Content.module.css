@@ -1,7 +1,7 @@
 .header,
 .tableRow {
   display: grid;
-  grid-template-columns: 0.095fr 0.305fr 0.06fr 0.07fr 0.112fr 0.068fr 0.27fr 0.02fr;
+  grid-template-columns: 0.09fr 0.29fr 0.06fr 0.068fr 0.11fr 0.068fr 0.294fr 0.02fr;
   gap: var(--spacing-md);
 }
 
