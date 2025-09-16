@@ -16,3 +16,9 @@
   align-items: center;
   gap: var(--spacing-2xl);
 }
+
+@media only screen and (max-width: 1024px) {
+  .actionsContainer {
+    gap: var(--spacing-xl);
+  }
+}

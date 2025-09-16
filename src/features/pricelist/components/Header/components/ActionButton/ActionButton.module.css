@@ -4,10 +4,23 @@
   gap: var(--spacing-md);
   padding: calc(var(--spacing-lg) / 2) var(--spacing-lg);
   border-radius: var(--spacing-lg);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+@media only screen and (max-width: 1024px) {
+  .actionButton {
+    padding: var(--spacing-md) var(--spacing-7xl);
+    border-radius: var(--spacing-xl);
+  }
 }
 
 .actionButtonText {
   color: var(--main-dark-gray);
   font-weight: 500;
+}
+
+@media only screen and (max-width: 1024px) {
+  .actionButtonText {
+    display: none;
+  }
 }

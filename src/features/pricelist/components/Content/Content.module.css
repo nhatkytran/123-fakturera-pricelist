@@ -4,6 +4,12 @@
   gap: var(--spacing-xl);
 }
 
+@media only screen and (max-width: 1024px) {
+  .content {
+    gap: var(--spacing-lg);
+  }
+}
+
 .gridTemplate {
   display: grid;
   grid-template-columns: 0.09fr 0.29fr 0.06fr 0.068fr 0.11fr 0.068fr 0.294fr 0.02fr;
@@ -24,6 +30,12 @@
 @media only screen and (max-width: 1124px) {
   .gridTemplate {
     grid-template-columns: 0.18fr 0.37fr 0.13fr 0.18fr 0.11fr 0.03fr;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .gridTemplate {
+    grid-template-columns: 0.16fr 0.42fr 0.12fr 0.12fr 0.15fr 0.03fr;
   }
 }
 

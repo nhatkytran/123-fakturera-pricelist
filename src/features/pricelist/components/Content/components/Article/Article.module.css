@@ -48,6 +48,25 @@
   }
 }
 
+.tableCell[name='unitPlaceholder'] {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .tableCell {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--spacing-xl);
+  }
+
+  .tableCell[name='unit'] {
+    display: none;
+  }
+
+  .tableCell[name='unitPlaceholder'] {
+    display: block;
+  }
+}
+
 .tableCellIcon {
   display: flex;
   align-items: center;

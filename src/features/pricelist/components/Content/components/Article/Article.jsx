@@ -27,6 +27,7 @@ export default function Article({ article, isActive, onArticleClick }) {
       <input className={styles.tableCell} type="number" name="price" value={price} />
       <input className={styles.tableCell} type="text" name="unit" value={unit} />
       <input className={styles.tableCell} type="number" name="inStock" value={inStock} />
+      <input className={styles.tableCell} type="text" name="unitPlaceholder" value={unit} />
       <input className={styles.tableCell} type="text" name="description" value={description} />
       <div className={styles.tableCellIcon}>
         <MdMoreHoriz size={18} />

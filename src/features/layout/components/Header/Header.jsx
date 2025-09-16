@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div className={styles.headerContainer}>
       <header className={styles.header}>
-        {/* <UserDisplay /> */}
+        <UserDisplay />
         <SidebarTrigger />
         <Language />
       </header>

@@ -6,6 +6,12 @@
   background-color: var(--main-dark-blue);
 }
 
+@media only screen and (max-width: 1024px) {
+  .headerContainer {
+    height: 72px;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;

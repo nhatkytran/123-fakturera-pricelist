@@ -21,3 +21,27 @@
     display: none;
   }
 }
+
+.headerCell[name='unitPlaceholder'] {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .headerCell[name='unit'] {
+    display: none;
+  }
+
+  .headerCell[name='unitPlaceholder'] {
+    display: block;
+  }
+}
+
+.headerCellArrow {
+  display: block;
+}
+
+@media only screen and (max-width: 1024px) {
+  .headerCellArrow {
+    display: none;
+  }
+}

@@ -30,6 +30,12 @@
   scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
 }
 
+@media only screen and (max-width: 1024px) {
+  .content {
+    height: calc(100vh - 72px);
+  }
+}
+
 .content::-webkit-scrollbar {
   display: none; /* Older Safari and Chromium */
 }

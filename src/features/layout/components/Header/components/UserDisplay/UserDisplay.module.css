@@ -5,6 +5,12 @@
   position: relative;
 }
 
+@media screen and (max-width: 1024px) {
+  .container {
+    display: none;
+  }
+}
+
 .imageContainer {
   position: relative;
 }

@@ -3,4 +3,23 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    display: flex;
+  }
+}
+
+.menuIcon {
+  width: var(--spacing-6xl);
+  height: var(--spacing-6xl);
+}
+
+@media screen and (max-width: 900px) {
+  .menuIcon {
+    width: var(--spacing-5xl);
+    height: var(--spacing-5xl);
+  }
 }

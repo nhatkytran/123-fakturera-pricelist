@@ -5,7 +5,7 @@ import styles from './SidebarTrigger.module.css';
 export default function SidebarTrigger() {
   return (
     <div className={styles.container}>
-      <RiMenuLine size="36" color="var(--main-white)" />
+      <RiMenuLine color="var(--main-white)" className={styles.menuIcon} />
     </div>
   );
 }
