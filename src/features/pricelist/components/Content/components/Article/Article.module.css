@@ -15,6 +15,12 @@
   transform: translateY(-50%) translateX(-100%);
 }
 
+@media only screen and (max-width: 1300px) {
+  .tableRowArrow {
+    left: -12px;
+  }
+}
+
 .tableCell {
   width: 100%;
   padding: var(--spacing-sm) calc(var(--spacing-xs) * 3);
@@ -22,6 +28,12 @@
   font-weight: 500;
   border: 1px solid var(--main-extra-light-blue);
   border-radius: calc(var(--spacing-lg) - 2px);
+}
+
+@media only screen and (max-width: 1300px) {
+  .tableCell[name='description'] {
+    display: none;
+  }
 }
 
 .tableCellIcon {

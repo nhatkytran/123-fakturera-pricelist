@@ -20,7 +20,9 @@ export default function Header() {
       <div className={styles.headerCell}>Price</div>
       <div className={styles.headerCell}>Unit</div>
       <div className={styles.headerCell}>In Stock</div>
-      <div className={styles.headerCell}>Description</div>
+      <div name="description" className={styles.headerCell}>
+        Description
+      </div>
       <div></div>
     </header>
   );
