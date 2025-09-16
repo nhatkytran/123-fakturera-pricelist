@@ -35,3 +35,10 @@
 .content::-webkit-scrollbar {
   display: none; /* Older Safari and Chromium */
 }
+
+@media only screen and (max-width: 1300px) {
+  .content {
+    padding-right: var(--spacing-2xl);
+    padding-left: calc(var(--spacing-7xl) + var(--spacing-2xl));
+  }
+}

@@ -9,6 +9,12 @@
   grid-template-columns: 0.09fr 0.29fr 0.06fr 0.068fr 0.11fr 0.068fr 0.294fr 0.02fr;
 }
 
+@media only screen and (max-width: 1500px) {
+  .gridTemplate {
+    grid-template-columns: 0.12fr 0.25fr 0.08fr 0.088fr 0.12fr 0.07fr 0.25fr 0.02fr;
+  }
+}
+
 .table {
   display: flex;
   flex-direction: column;
