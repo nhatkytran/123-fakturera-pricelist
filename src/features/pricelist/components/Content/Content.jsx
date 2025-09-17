@@ -257,6 +257,16 @@ export default function Content() {
     <div className={styles.content}>
       <Header />
       <div className={styles.table}>
+        <div className={styles.gridTemplate}>
+          <span className={styles.tableCellSkeleton} />
+          <span className={styles.tableCellSkeleton} />
+          <span className={styles.tableCellSkeleton} />
+          <span className={styles.tableCellSkeleton} />
+          <span className={styles.tableCellSkeleton} />
+          <span className={styles.tableCellSkeleton} />
+          <span className={styles.tableCellSkeleton} />
+          <span className={styles.tableCellSkeleton} />
+        </div>
         {PRICE_LIST.map((article, index) => (
           <Article
             key={article.articleNo}
@@ -265,7 +275,6 @@ export default function Content() {
             onArticleClick={handleArticleClick(index)}
           />
         ))}
-        <div className={styles.gridTemplate}></div>
       </div>
     </div>
   );

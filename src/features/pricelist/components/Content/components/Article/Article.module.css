@@ -32,7 +32,7 @@
   font-size: var(--font-size-md);
   font-weight: 500;
   border: 1px solid var(--main-extra-light-blue);
-  border-radius: calc(var(--spacing-lg) - 2px);
+  border-radius: calc(var(--spacing-lg) - var(--spacing-xs));
 }
 
 @media only screen and (max-width: 1300px) {
