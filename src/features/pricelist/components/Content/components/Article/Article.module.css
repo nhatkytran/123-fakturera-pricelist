@@ -1,5 +1,4 @@
 .tableRow {
-  gap: calc(var(--spacing-lg) - 2px);
   position: relative;
 }
 

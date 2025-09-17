@@ -265,6 +265,7 @@ export default function Content() {
             onArticleClick={handleArticleClick(index)}
           />
         ))}
+        <div className={styles.gridTemplate}></div>
       </div>
     </div>
   );

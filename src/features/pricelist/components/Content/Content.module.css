@@ -13,6 +13,7 @@
 .gridTemplate {
   display: grid;
   grid-template-columns: 0.09fr 0.29fr 0.06fr 0.068fr 0.11fr 0.068fr 0.294fr 0.02fr;
+  gap: calc(var(--spacing-lg) - 2px);
 }
 
 @media only screen and (max-width: 1500px) {

@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { FaArrowDownLong } from 'react-icons/fa6';
 
 import stylesContent from '@/features/pricelist/components/Content/Content.module.css';
@@ -7,7 +6,7 @@ import styles from './Header.module.css';
 /** Header component. */
 export default function Header() {
   return (
-    <header className={clsx(stylesContent.gridTemplate, styles.header)}>
+    <header className={stylesContent.gridTemplate}>
       <div name="articleNo" className={styles.headerCell}>
         Article No.
         <FaArrowDownLong color="#3be6e6" className={styles.headerCellArrow} />
