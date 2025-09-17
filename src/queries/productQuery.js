@@ -12,8 +12,8 @@ export const productKeys = {
   list: () => [...productKeys.products, 'list'],
 };
 
-/** Fetch all products. */
-export const useFetchAllProducts = () =>
+/** Get all products. */
+export const useGetAllProducts = () =>
   useQuery({
     queryFn: ProductApi.getAllProducts,
     queryKey: productKeys.list(),
