@@ -2,7 +2,7 @@ import { Product } from '@/models';
 import { ProductDto } from '@/api/dtos';
 
 /** Product mapper. */
-class ProductMapper {
+export class ProductMapper {
   /**
    * Product mapper constructor.
    * @param {ProductDto} dto Product dto.
