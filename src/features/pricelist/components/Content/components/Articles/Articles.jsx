@@ -1,8 +1,9 @@
+import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { isEqual } from 'lodash';
 
+import { useUpdateProduct } from '@/queries';
 import Article from '../Article';
-import { useEffect, useRef } from 'react';
 import { mapProductFormDataToModel } from './Articles.settings';
 
 /**
@@ -14,16 +15,17 @@ import { mapProductFormDataToModel } from './Articles.settings';
  */
 export default function Articles({ products, activeIndex, handleArticleClick }) {
   const productsDefault = useRef(products.map(product => ({ ...product })));
+  const { mutate: updateProduct } = useUpdateProduct();
   const { control, watch } = useForm({ defaultValues: { products: products.map(product => ({ ...product })) } });
   const activeProduct = watch(`products.${activeIndex}`);
 
   useEffect(() => {
-    if (!isEqual(mapProductFormDataToModel(activeProduct), productsDefault.current[activeIndex])) {
-      // eslint-disable-next-line no-console
-      console.log('Update');
+    const mappedActiveProduct = mapProductFormDataToModel(activeProduct);
+    if (!isEqual(mappedActiveProduct, productsDefault.current[activeIndex])) {
+      updateProduct(mappedActiveProduct);
     }
   }, [
-    products,
+    updateProduct,
     activeIndex,
     activeProduct,
     activeProduct.articleNo,

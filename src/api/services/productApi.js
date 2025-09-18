@@ -9,4 +9,11 @@ export class ProductApi {
     const { data } = await http.get(apiUrlsConfig.products.list, { withCredentials: true });
     return data.data.map(ProductMapper.fromDto);
   }
+
+  /** Update product. */
+  static async updateProduct(product) {
+    await http.patch(apiUrlsConfig.products.update(product.id), ProductMapper.toDto(product), {
+      withCredentials: true,
+    });
+  }
 }

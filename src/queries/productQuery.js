@@ -1,5 +1,5 @@
 import { ProductApi } from '@/api/services/productApi';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 /** Product keys. */
 export const productKeys = {
@@ -18,3 +18,13 @@ export const useGetAllProducts = () =>
     queryFn: ProductApi.getAllProducts,
     queryKey: productKeys.list(),
   });
+
+/** Update product. */
+export const useUpdateProduct = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: ProductApi.updateProduct,
+    /** On success. */
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: productKeys.list() }),
+  });
+};

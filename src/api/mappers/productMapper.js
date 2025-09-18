@@ -21,4 +21,23 @@ export class ProductMapper {
       updatedAt: new Date(dto.updatedAt),
     });
   }
+
+  /**
+   * Product mapper to dto.
+   * @param {Product} product Product.
+   */
+  static toDto(product) {
+    return new ProductDto({
+      id: product.id,
+      articleNo: product.articleNo,
+      name: product.productService,
+      inPrice: product.inPrice,
+      price: product.price,
+      unit: product.unit,
+      inStock: product.inStock,
+      description: product.description,
+      createdAt: product.createdAt.toISOString(),
+      updatedAt: product.updatedAt.toISOString(),
+    });
+  }
 }

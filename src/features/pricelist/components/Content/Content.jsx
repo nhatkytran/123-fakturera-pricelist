@@ -28,7 +28,11 @@ export default function Content() {
         {isLoading ? (
           Array.from({ length: ARTICLE_SKELETON_COUNT }).map((_, index) => <ArticleSkeleton key={index} />)
         ) : (
-          <Articles products={products} activeIndex={activeIndex} handleArticleClick={handleArticleClick} />
+          <Articles
+            products={products.sort((a, b) => a.id - b.id)}
+            activeIndex={activeIndex}
+            handleArticleClick={handleArticleClick}
+          />
         )}
       </div>
     </div>
