@@ -2,9 +2,10 @@ import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { isEqual } from 'lodash';
 
+import { useAppLoading } from '@/shared/hooks';
 import { useUpdateProduct } from '@/queries';
-import Article from '../Article';
 import { mapProductFormDataToModel } from './Articles.settings';
+import Article from '../Article';
 
 const UPDATE_DEBOUNCE_TIME = 300;
 
@@ -16,6 +17,7 @@ const UPDATE_DEBOUNCE_TIME = 300;
  * @param {function} props.handleArticleClick The handle article click.
  */
 export default function Articles({ products, activeIndex, handleArticleClick }) {
+  const { handleIsLoading } = useAppLoading();
   const productsDefault = useRef(products.map(product => ({ ...product })));
   const { mutate: updateProduct } = useUpdateProduct();
   const { control, watch } = useForm({ defaultValues: { products: products.map(product => ({ ...product })) } });
@@ -25,9 +27,16 @@ export default function Articles({ products, activeIndex, handleArticleClick }) 
     let timeoutId = null;
     const mappedActiveProduct = mapProductFormDataToModel(activeProduct);
     if (!isEqual(mappedActiveProduct, productsDefault.current[activeIndex])) {
-      timeoutId = setTimeout(() => updateProduct(mappedActiveProduct), UPDATE_DEBOUNCE_TIME);
+      timeoutId = setTimeout(() => {
+        handleIsLoading(true);
+        updateProduct(mappedActiveProduct, {
+          /** Handle update product success. */
+          onSuccess: () => handleIsLoading(false),
+        });
+      }, UPDATE_DEBOUNCE_TIME);
     }
     return () => clearTimeout(timeoutId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     updateProduct,
     activeIndex,

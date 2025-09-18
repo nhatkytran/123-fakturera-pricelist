@@ -1,3 +1,4 @@
+import { useAppLoading } from '@/shared/hooks';
 import UserDisplay from './components/UserDisplay';
 import SidebarTrigger from './components/SidebarTrigger';
 import Language from './components/Language';
@@ -5,6 +6,8 @@ import styles from './Header.module.css';
 
 /** Header component. */
 export default function Header() {
+  const { isLoading } = useAppLoading();
+
   return (
     <div className={styles.headerContainer}>
       <header className={styles.header}>
@@ -12,7 +15,7 @@ export default function Header() {
         <SidebarTrigger />
         <Language />
       </header>
-      <div className={styles.loadingBar} />
+      {isLoading && <div className={styles.loadingBar} />}
     </div>
   );
 }
