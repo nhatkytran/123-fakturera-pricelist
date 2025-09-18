@@ -25,6 +25,7 @@
     "axios": "^1.12.2",
     "clsx": "^2.1.1",
     "eslint-plugin-jsdoc": "^57.0.8",
+    "lodash": "^4.17.21",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.62.0",
