@@ -12,6 +12,7 @@ export default function Header() {
         <SidebarTrigger />
         <Language />
       </header>
+      <div className={styles.loadingBar} />
     </div>
   );
 }
