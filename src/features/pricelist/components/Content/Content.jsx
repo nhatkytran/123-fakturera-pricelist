@@ -11,7 +11,7 @@ const ARTICLE_SKELETON_COUNT = 26;
 /** Content component. */
 export default function Content() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { data: products, isLoading } = useGetAllProducts();
+  const { data: products, isLoading, error } = useGetAllProducts();
 
   /**
    * Handle article click.
@@ -20,6 +20,10 @@ export default function Content() {
   const handleArticleClick = index => () => {
     setActiveIndex(index);
   };
+
+  if (error) {
+    return <div>Some thing went wrong!</div>;
+  }
 
   return (
     <div className={styles.content}>
