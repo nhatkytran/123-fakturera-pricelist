@@ -3,7 +3,7 @@ export class Product {
   /**
    * Product constructor.
    * @param {Object} data Product data.
-   * @param {string} data.id Product id.
+   * @param {number} data.id Product id.
    * @param {number} data.articleNo Product article number.
    * @param {string} data.productService Product service.
    * @param {number} data.inPrice Product in price.

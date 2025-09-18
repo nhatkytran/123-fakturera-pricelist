@@ -10,12 +10,12 @@ export class ProductMapper {
   static fromDto(dto) {
     return new Product({
       id: dto.id,
-      articleNo: Number(dto.articleNo),
+      articleNo: dto.articleNo,
       productService: dto.name,
-      inPrice: Number(dto.inPrice),
-      price: Number(dto.price),
+      inPrice: dto.inPrice,
+      price: dto.price,
       unit: dto.unit,
-      inStock: Number(dto.inStock),
+      inStock: dto.inStock,
       description: dto.description,
       createdAt: new Date(dto.createdAt),
       updatedAt: new Date(dto.updatedAt),

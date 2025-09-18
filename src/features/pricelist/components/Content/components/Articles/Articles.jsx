@@ -9,13 +9,19 @@ import Article from '../Article';
  * @param {function} props.handleArticleClick The handle article click.
  */
 export default function Articles({ products, activeIndex, handleArticleClick }) {
-  const { control } = useForm({ defaultValues: { products } });
+  const { control, watch } = useForm({ defaultValues: { products } });
+
+  const data = watch(`products.${activeIndex}`);
+
+  // eslint-disable-next-line no-console
+  console.log(data);
 
   return (
     <>
       {products.map((article, index) => (
         <Article
-          key={article.articleNo}
+          key={article.id}
+          watch={watch}
           control={control}
           index={index}
           isActive={index === activeIndex}

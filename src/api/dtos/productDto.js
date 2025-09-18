@@ -3,13 +3,13 @@ export class ProductDto {
   /**
    * Product dto constructor.
    * @param {Object} dto Product dto.
-   * @param {string} dto.id Product id.
-   * @param {string} dto.articleNo Product article number.
+   * @param {number} dto.id Product id.
+   * @param {number} dto.articleNo Product article number.
    * @param {string} dto.name Product name.
-   * @param {string} dto.inPrice Product in price.
-   * @param {string} dto.price Product price.
+   * @param {number} dto.inPrice Product in price.
+   * @param {number} dto.price Product price.
    * @param {string} dto.unit Product unit.
-   * @param {string} dto.inStock Product in stock.
+   * @param {number} dto.inStock Product in stock.
    * @param {string} dto.description Product description.
    * @param {string} dto.createdAt Product created at.
    * @param {string} dto.updatedAt Product updated at.
