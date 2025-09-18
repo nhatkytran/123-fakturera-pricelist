@@ -6,6 +6,8 @@ import { useUpdateProduct } from '@/queries';
 import Article from '../Article';
 import { mapProductFormDataToModel } from './Articles.settings';
 
+const UPDATE_DEBOUNCE_TIME = 300;
+
 /**
  * Articles component.
  * @param {Object} props The props.
@@ -20,10 +22,12 @@ export default function Articles({ products, activeIndex, handleArticleClick }) 
   const activeProduct = watch(`products.${activeIndex}`);
 
   useEffect(() => {
+    let timeoutId = null;
     const mappedActiveProduct = mapProductFormDataToModel(activeProduct);
     if (!isEqual(mappedActiveProduct, productsDefault.current[activeIndex])) {
-      updateProduct(mappedActiveProduct);
+      timeoutId = setTimeout(() => updateProduct(mappedActiveProduct), UPDATE_DEBOUNCE_TIME);
     }
+    return () => clearTimeout(timeoutId);
   }, [
     updateProduct,
     activeIndex,
