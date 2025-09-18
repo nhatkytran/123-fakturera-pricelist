@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useGetAllProducts } from '@/queries';
 import Header from './components/Header';
 import ArticleSkeleton from './components/ArticleSkeleton';
-import Article from './components/Article';
+import Articles from './components/Articles';
 import styles from './Content.module.css';
 
 const ARTICLE_SKELETON_COUNT = 26;
@@ -25,16 +25,11 @@ export default function Content() {
     <div className={styles.content}>
       <Header />
       <div className={styles.table}>
-        {isLoading
-          ? Array.from({ length: ARTICLE_SKELETON_COUNT }).map((_, index) => <ArticleSkeleton key={index} />)
-          : products.map((article, index) => (
-              <Article
-                key={article.articleNo}
-                article={article}
-                isActive={index === activeIndex}
-                onArticleClick={handleArticleClick(index)}
-              />
-            ))}
+        {isLoading ? (
+          Array.from({ length: ARTICLE_SKELETON_COUNT }).map((_, index) => <ArticleSkeleton key={index} />)
+        ) : (
+          <Articles products={products} activeIndex={activeIndex} handleArticleClick={handleArticleClick} />
+        )}
       </div>
     </div>
   );
