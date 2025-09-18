@@ -41,6 +41,10 @@ export default function Articles({ products, activeIndex, handleArticleClick }) 
     activeProduct.description,
   ]);
 
+  useEffect(() => {
+    productsDefault.current = products.map(product => ({ ...product }));
+  }, [products]);
+
   return (
     <>
       {products.map((article, index) => (
