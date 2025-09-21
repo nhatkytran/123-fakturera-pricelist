@@ -6,8 +6,7 @@ import styles from './Header.module.css';
 
 /** Header component. */
 export default function Header() {
-  const { searchArticleNoInput, searchProductInput, handleSearchArticleNoInput, handleSearchProductInput } =
-    useAppSearch();
+  const { searchArticleNo, searchProduct, handleSearchArticleNo, handleSearchProduct } = useAppSearch();
 
   return (
     <header className={styles.header}>
@@ -15,14 +14,14 @@ export default function Header() {
         <SearchInput
           name="article"
           placeholder="Search Article No..."
-          value={searchArticleNoInput}
-          onChange={handleSearchArticleNoInput}
+          value={searchArticleNo}
+          onChange={handleSearchArticleNo}
         />
         <SearchInput
           name="product"
           placeholder="Search Product ..."
-          value={searchProductInput}
-          onChange={handleSearchProductInput}
+          value={searchProduct}
+          onChange={handleSearchProduct}
         />
       </div>
       <div className={styles.actionsContainer}>

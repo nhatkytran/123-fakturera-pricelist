@@ -7,29 +7,27 @@ const AppSearchContext = createContext();
  * @param {React.ReactNode} props.children The children elements.
  */
 const AppSearchProvider = ({ children }) => {
-  const [searchArticleNoInput, setSearchArticleNoInput] = useState('');
-  const [searchProductInput, setSearchProductInput] = useState('');
+  const [searchArticleNo, setSearchArticleNo] = useState('');
+  const [searchProduct, setSearchProduct] = useState('');
 
   /**
-   * Handle search article no input.
+   * Handle search article no.
    * @param {string} articleNo The article no.
    */
-  const handleSearchArticleNoInput = articleNo => {
-    setSearchArticleNoInput(articleNo);
+  const handleSearchArticleNo = articleNo => {
+    setSearchArticleNo(articleNo);
   };
 
   /**
-   * Handle search product input.
+   * Handle search product.
    * @param {string} product The product.
    */
-  const handleSearchProductInput = product => {
-    setSearchProductInput(product);
+  const handleSearchProduct = product => {
+    setSearchProduct(product);
   };
 
   return (
-    <AppSearchContext.Provider
-      value={{ searchArticleNoInput, searchProductInput, handleSearchArticleNoInput, handleSearchProductInput }}
-    >
+    <AppSearchContext.Provider value={{ searchArticleNo, searchProduct, handleSearchArticleNo, handleSearchProduct }}>
       {children}
     </AppSearchContext.Provider>
   );
