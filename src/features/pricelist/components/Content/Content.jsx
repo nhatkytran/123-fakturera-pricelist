@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { BehaviorSubject, combineLatest, tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, debounceTime, distinctUntilChanged, tap } from 'rxjs';
 
 import { useGetAllProducts } from '@/queries';
 import { useAppSearch } from '@/shared/hooks';
@@ -9,6 +9,7 @@ import Articles from './components/Articles';
 import styles from './Content.module.css';
 
 const ARTICLE_SKELETON_COUNT = 26;
+const SEARCH_DEBOUNCE_TIME = 300;
 
 /** Content component. */
 export default function Content() {
@@ -34,6 +35,8 @@ export default function Content() {
 
     const subscription = combineLatest([searchArticleNo$.current, searchProduct$.current])
       .pipe(
+        debounceTime(SEARCH_DEBOUNCE_TIME),
+        distinctUntilChanged(),
         tap(([searchArticleNo, searchProduct]) => {
           const filteredProducts = products.filter(product => {
             return (
