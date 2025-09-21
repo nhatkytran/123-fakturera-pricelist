@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { BehaviorSubject, combineLatest, tap } from 'rxjs';
 
 import { useGetAllProducts } from '@/queries';
+import { useAppSearch } from '@/shared/hooks';
 import Header from './components/Header';
 import ArticleSkeleton from './components/ArticleSkeleton';
 import Articles from './components/Articles';
@@ -10,8 +12,12 @@ const ARTICLE_SKELETON_COUNT = 26;
 
 /** Content component. */
 export default function Content() {
+  const searchArticleNo$ = useRef(new BehaviorSubject(''));
+  const searchProduct$ = useRef(new BehaviorSubject(''));
   const [activeIndex, setActiveIndex] = useState(0);
   const { data: products, isLoading, error } = useGetAllProducts();
+  const [productsData, setProductsData] = useState([]);
+  const { searchArticleNo, searchProduct } = useAppSearch();
 
   /**
    * Handle article click.
@@ -21,8 +27,39 @@ export default function Content() {
     setActiveIndex(index);
   };
 
+  useEffect(() => {
+    if (products == null) {
+      return;
+    }
+
+    const subscription = combineLatest([searchArticleNo$.current, searchProduct$.current])
+      .pipe(
+        tap(([searchArticleNo, searchProduct]) => {
+          const filteredProducts = products.filter(product => {
+            return (
+              product.articleNo.toString().toLowerCase().includes(searchArticleNo.toLowerCase()) &&
+              product.productService.toString().toLowerCase().includes(searchProduct.toLowerCase())
+            );
+          });
+          setProductsData(filteredProducts.sort((a, b) => a.id - b.id));
+        }),
+      )
+      .subscribe();
+
+    return () => subscription.unsubscribe();
+  }, [products]);
+
+  useEffect(() => {
+    searchArticleNo$.current.next(searchArticleNo);
+    searchProduct$.current.next(searchProduct);
+  }, [searchArticleNo, searchProduct]);
+
   if (error) {
     return <div>Some thing went wrong!</div>;
+  }
+
+  if (!isLoading && productsData.length === 0) {
+    return <div>No products found!</div>;
   }
 
   return (
@@ -32,11 +69,7 @@ export default function Content() {
         {isLoading ? (
           Array.from({ length: ARTICLE_SKELETON_COUNT }).map((_, index) => <ArticleSkeleton key={index} />)
         ) : (
-          <Articles
-            products={products.sort((a, b) => a.id - b.id)}
-            activeIndex={activeIndex}
-            handleArticleClick={handleArticleClick}
-          />
+          <Articles products={productsData} activeIndex={activeIndex} handleArticleClick={handleArticleClick} />
         )}
       </div>
     </div>
