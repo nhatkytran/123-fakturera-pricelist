@@ -1,4 +1,4 @@
-import { AppLoadingProvider } from './shared/context';
+import { AppLoadingProvider, AppSearchProvider } from './shared/context';
 import Layout from './features/layout';
 import Pricelist from './features/pricelist';
 
@@ -6,9 +6,11 @@ import Pricelist from './features/pricelist';
 export default function App() {
   return (
     <AppLoadingProvider>
-      <Layout>
-        <Pricelist />
-      </Layout>
+      <AppSearchProvider>
+        <Layout>
+          <Pricelist />
+        </Layout>
+      </AppSearchProvider>
     </AppLoadingProvider>
   );
 }

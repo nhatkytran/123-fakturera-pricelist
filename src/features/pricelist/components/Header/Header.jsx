@@ -1,3 +1,4 @@
+import { useAppSearch } from '@/shared/hooks';
 import { PRICE_LIST_ACTION_BUTTONS } from '@/features/pricelist/data';
 import SearchInput from './components/SearchInput';
 import ActionButton from './components/ActionButton';
@@ -5,11 +6,23 @@ import styles from './Header.module.css';
 
 /** Header component. */
 export default function Header() {
+  const { searchArticleNo, searchProduct, handleSearchArticleNo, handleSearchProduct } = useAppSearch();
+
   return (
     <header className={styles.header}>
       <div className={styles.searchContainer}>
-        <SearchInput name="article" placeholder="Search Article No..." />
-        <SearchInput name="product" placeholder="Search Product ..." />
+        <SearchInput
+          name="article"
+          placeholder="Search Article No..."
+          value={searchArticleNo}
+          onChange={handleSearchArticleNo}
+        />
+        <SearchInput
+          name="product"
+          placeholder="Search Product ..."
+          value={searchProduct}
+          onChange={handleSearchProduct}
+        />
       </div>
       <div className={styles.actionsContainer}>
         {PRICE_LIST_ACTION_BUTTONS.map(({ title, Icon, color }, index) => (
